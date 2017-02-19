@@ -3,9 +3,15 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import {createStore} from 'redux';
 import allReducers from './reducers';
+import {Provider} from 'react-redux';
+import App from './components/app'
+console.log(allReducers);
 
 const store = createStore(allReducers);
 
-ReactDOM.render(<h1>Hello world2</h1>,
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
     document.getElementById('root')
 );
